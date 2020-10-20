@@ -1,40 +1,26 @@
-import java.awt.List;
-import java.util.ArrayList;
 
 class Fichier implements Element {
-ArrayList<Element> files = new ArrayList<Element>();
+	
+	
+	private Long size;
 
 
-public Fichier(long l) {
-	// TODO Auto-generated constructor stub
-	super();
-}
+	public Fichier(Long size) {
+	this.size = size;
 
-public String getType() {
+	}
 
-return "Fichier";
 
-}
+	public String getType() {
+	return "txt";
+	}
 
-public void addFile(Element file) {
+	public Long getTaille() {
+	return this.size;
+	}
 
-files.add(file);
+	
 
-}
-
-public Long getTaille() {
-
-Long size = 0L;
-
-for (Element file : files) {
-
-size = size + file.getTaille();
-
-}
-
-return size;
-
-}
 
 
 }

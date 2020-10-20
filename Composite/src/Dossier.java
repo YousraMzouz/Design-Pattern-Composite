@@ -1,20 +1,41 @@
+import java.util.ArrayList;
+
 class Dossier implements Element {
-private Long size;
+	
+	
+	
+ArrayList<Element> files = new ArrayList<Element>();
 
 
-public Dossier(Long size) {
-this.size = size;
+public Dossier(long l) {
+	// TODO Auto-generated constructor stub
+	super();
+}
+
+public String getType() {
+
+return "Fichier";
 
 }
 
+public void addFile(Element file) {
 
-public String getType() {
-return "txt";
+files.add(file);
+
 }
 
 public Long getTaille() {
-return this.size;
+
+Long size = 0L;
+
+for (Element file : files) {
+
+size = size + file.getTaille();
+
 }
 
+return size;
+
+}
 
 }
